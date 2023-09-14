@@ -16,4 +16,4 @@ runs:
         python-version: ${{ inputs.python-version }}
     - name: Update requirements
       shell: bash
-      run: echo $PYTHON_VERSION
+      run: echo env py ver is $PYTHON_VERSION
