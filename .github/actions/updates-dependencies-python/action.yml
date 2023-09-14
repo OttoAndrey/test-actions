@@ -1,13 +1,15 @@
 name: Update requirements
 runs-on: ubuntu-latest
-steps:
-  - uses: actions/checkout@v3
-  - name: Set up Python 3.11
-    uses: actions/setup-python@v4
-    with:
-      python-version: $PYTHON_VERSION
-  - name: Update requirements
-    run: |
-      pip install --requirement requirements/local_build.txt
-      inv project.install-tools
-      inv project.pip-compile --update
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v4
+      with:
+        python-version: $PYTHON_VERSION
+    - name: Update requirements
+      run: |
+        pip install --requirement requirements/local_build.txt
+        inv project.install-tools
+        inv project.pip-compile --update
