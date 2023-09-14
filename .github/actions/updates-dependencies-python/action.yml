@@ -13,7 +13,7 @@ runs:
     - name: Set up Python 3.11
       uses: actions/setup-python@v4
       with:
-        python-version: ${{ inputs.python-version }}
+        python-version: ${{ env.PYTHON_VERSION }}
     - name: Update requirements
       shell: bash
       run: echo env py ver is $PYTHON_VERSION
