@@ -16,7 +16,4 @@ runs:
         python-version: ${{ inputs.python-version }}
     - name: Update requirements
       shell: bash
-      run: |
-        pip install --requirement requirements/local_build.txt
-        inv project.install-tools
-        inv project.pip-compile --update
+      run: echo $PYTHON_VERSION
