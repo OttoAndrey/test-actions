@@ -1,3 +1,9 @@
+inputs:
+  python-version:
+    description: 'py ver'
+    required: true
+    default: '3.9'
+
 name: Update requirements
 runs-on: ubuntu-latest
 runs:
@@ -7,7 +13,7 @@ runs:
     - name: Set up Python 3.11
       uses: actions/setup-python@v4
       with:
-        python-version: $PYTHON_VERSION
+        python-version: ${{ inputs.python-version }}
     - name: Update requirements
       shell: bash
       run: |
