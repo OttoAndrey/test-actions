@@ -9,6 +9,7 @@ runs:
       with:
         python-version: $PYTHON_VERSION
     - name: Update requirements
+      shell: bash
       run: |
         pip install --requirement requirements/local_build.txt
         inv project.install-tools
